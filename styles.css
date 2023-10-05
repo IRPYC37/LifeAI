@@ -1,0 +1,27 @@
+body{
+    display: flex;
+}
+
+main {
+
+}
+
+p{
+    padding: 10px;
+    height: 10px;
+    width: 100;
+}
+
+input{
+    height: 1%;
+    width: 100%;
+    margin-bottom: 25%;
+}
+
+div{
+    flex-wrap: wrap;
+}
+
+header{
+    display: flex;
+}
