@@ -2,8 +2,8 @@ body{
     display: flex;
 }
 
-main {
-
+button {
+    height: 5%;
 }
 
 p{
@@ -20,8 +20,14 @@ input{
 
 div{
     flex-wrap: wrap;
+    flex-grow: 0;
 }
 
 header{
     display: flex;
+}
+
+.maxVect{
+    height: 1%;
+    width: 25%;
 }

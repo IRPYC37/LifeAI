@@ -1,86 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LifeAI</title>
     <link rel="stylesheet" type="text/css" href="styles.css" />
     <script src="affichage.js" defer></script>
-
-</head>
-<body>
+  </head>
+  <body>
     <main>
-        <div>
-            <!--Nombre de Bleu-->
-            <header>
-                <p>Nombre de Bleu :</p>
-                <p class="nbBleu">0</p>
-            </header>
-            <input type="range" class="nombreBleu" min="0" max="1000" value="0" >
-        </div>
+      <!--Selection du vecteur max entre les cellules-->
+      <div>
+        <p>Vecteur max entre les "cellules" :</p>
+        <input type="number" class="maxVect" min="0" max="100" />
+      </div>
+      <div>
+        <!--Nombre de Bleu-->
+        <header>
+          <p>Paramètres aléatoire :</p>
+        </header>
+        <input type="button" class="ParamAlea" value="Aléatoire" />
+      </div>
 
-        <div>
-            <!--Slider Blue X Red-->
-            <header>
-                <p>Slider Blue X Red :</p>
-                <p class="displayBR">0</p>
-            </header>
-            <input type="range" class="slider_blueXred" min="-100" max="100" value="0" >
-        </div>
-        
-        <div>
-            <!--Slider Red X Yellow-->
-            <header>
-                <p>Slider Red X Yellow :</p>
-                <p class="displayRY">0</p>
-            </header>
-            <input type="range" class="slider_redXyellow" min="-100" max="100" value="0" >
-        </div>
-        
-        <div>
-            <!--Slider Yellow X Blue-->
-            <header>
-                <p>Slider Yellow X Blue :</p>
-                <p class="displayYB">0</p>
-            </header>
-            <input type="range" class="slider_yellowXblue" min="-100" max="100" value="0" >
-        </div>
-        
-        <div>
-            <!--Slider Blue X Blue-->
-            <header>
-                <p>Slider Blue X Blue :</p>
-                <p class="displayBB">0</p>
-            </header>
-            <input type="range" class="slider_blueXblue" min="-100" max="100" value="0" >
-        </div>
-        
-        <div>
-            <!--Slider Red X Red-->
-            <header>
-                <p>Slider Red X Red :</p>
-                <p class="displayRR">0</p>
-            </header>
-            <input type="range" class="slider_redXred" min="-100" max="100" value="0" >
-        </div>
-        
-        <div>
-            <!--Slider Yellow X Yellow-->
-            <header>
-                <p>Slider Yellow X Yellow :</p>
-                <p class="displayYY">0</p>
-            </header>
-            <input type="range" class="slider_yellowXyellow" min="-100" max="100" value="0" >
-        </div>
-        
+      <div>
+        <!--Slider Blue X Red-->
+        <header>
+          <p>Slider Blue X Red :</p>
+          <p class="displayBR">0</p>
+        </header>
+        <input
+          type="range"
+          class="slider_blueXred"
+          min="-10"
+          max="10"
+          value="0"
+          step="0.1"
+        />
+      </div>
 
+      <div>
+        <!--Slider Red X Yellow-->
+        <header>
+          <p>Slider Red X Yellow :</p>
+          <p class="displayRY">0</p>
+        </header>
+        <input
+          type="range"
+          class="slider_redXyellow"
+          min="-10"
+          max="10"
+          value="0"
+          step="0.1"
+        />
+      </div>
+
+      <div>
+        <!--Slider Yellow X Blue-->
+        <header>
+          <p>Slider Yellow X Blue :</p>
+          <p class="displayYB">0</p>
+        </header>
+        <input
+          type="range"
+          class="slider_yellowXblue"
+          min="-10"
+          max="10"
+          value="0"
+          step="0.1"
+        />
+      </div>
+
+      <div>
+        <!--Slider Blue X Blue-->
+        <header>
+          <p>Slider Blue X Blue :</p>
+          <p class="displayBB">0</p>
+        </header>
+        <input
+          type="range"
+          class="slider_blueXblue"
+          min="-10"
+          max="10"
+          value="0"
+          step="0.1"
+        />
+      </div>
+
+      <div>
+        <!--Slider Red X Red-->
+        <header>
+          <p>Slider Red X Red :</p>
+          <p class="displayRR">0</p>
+        </header>
+        <input
+          type="range"
+          class="slider_redXred"
+          min="-10"
+          max="10"
+          value="0"
+          step="0.1"
+        />
+      </div>
+
+      <div>
+        <!--Slider Yellow X Yellow-->
+        <header>
+          <p>Slider Yellow X Yellow :</p>
+          <p class="displayYY">0</p>
+        </header>
+        <input
+          type="range"
+          class="slider_yellowXyellow"
+          min="-10"
+          max="10"
+          value="0"
+          step="0.1"
+        />
+      </div>
     </main>
 
     <aside>
-        <canvas id="life" width=1000 height=1000></canvas>
+      <canvas id="life" width="1000" height="1000"></canvas>
     </aside>
-    
-
-</body>
+  </body>
 </html>
-
