@@ -1,6 +1,17 @@
 m = document.getElementById("life").getContext("2d");
 
-/*Generation des vecteurs aléatoires*/
+Coef_BB = 0;
+Coef_BR = 0;
+Coef_RR = 0;
+Coef_RY = 0;
+Coef_YB = 0;
+Coef_YY = 0;
+Coef_WW = 0;
+Coef_WR = 0;
+Coef_WB = 0;
+Coef_WY = 0;
+
+/*Vecteurs max entre les cellules*/
 inputVA = document.querySelector(".maxVect");
 inputVA.addEventListener("input", () => {
   vecteurMax = inputVA.value;
@@ -9,12 +20,17 @@ inputVA.addEventListener("input", () => {
 /*Generation des vecteurs aléatoires*/
 inputPA = document.querySelector(".ParamAlea");
 inputPA.addEventListener("click", () => {
+  vecteurMax = inputVA.value;
   Coef_YY = Math.random() * (vecteurMax - -vecteurMax) + -vecteurMax;
   Coef_BB = Math.random() * (vecteurMax - -vecteurMax) + -vecteurMax;
   Coef_BR = Math.random() * (vecteurMax - -vecteurMax) + -vecteurMax;
   Coef_YB = Math.random() * (vecteurMax - -vecteurMax) + -vecteurMax;
   Coef_RR = Math.random() * (vecteurMax - -vecteurMax) + -vecteurMax;
   Coef_RY = Math.random() * (vecteurMax - -vecteurMax) + -vecteurMax;
+  Coef_WW = Math.random() * (vecteurMax - -vecteurMax) + -vecteurMax;
+  Coef_WR = Math.random() * (vecteurMax - -vecteurMax) + -vecteurMax;
+  Coef_WB = Math.random() * (vecteurMax - -vecteurMax) + -vecteurMax;
+  Coef_WY = Math.random() * (vecteurMax - -vecteurMax) + -vecteurMax;
 
   numberBB.textContent = Coef_BB;
   numberBR.textContent = Coef_BR;
@@ -22,23 +38,16 @@ inputPA.addEventListener("click", () => {
   numberRY.textContent = Coef_RY;
   numberYB.textContent = Coef_YB;
   numberYY.textContent = Coef_YY;
+  numberWW.textContent = Coef_WW;
+  numberWY.textContent = Coef_WY;
+  numberWB.textContent = Coef_WB;
+  numberWR.textContent = Coef_WR;
 
-  inputSBB = Coef_BB;
 });
-
-/*Slider Nb Bleu
-inputNbB = document.querySelector(".nombreBleu");
-numberNbB = document.querySelector(".nbBleu");
-nbB = 0;
-inputNbB.addEventListener("input", () => {
-  numberNbB.textContent = inputNbB.value;
-  nbB = inputSBR.value;
-}); */
 
 /*Slider Blue X Red*/
 inputSBR = document.querySelector(".slider_blueXred");
 numberBR = document.querySelector(".displayBR");
-Coef_BR = 0;
 inputSBR.addEventListener("input", () => {
   numberBR.textContent = inputSBR.value;
   Coef_BR = inputSBR.value;
@@ -47,7 +56,6 @@ inputSBR.addEventListener("input", () => {
 /*Slider Red X Yellow*/
 inputSRY = document.querySelector(".slider_redXyellow");
 numberRY = document.querySelector(".displayRY");
-Coef_RY = 0;
 inputSRY.addEventListener("input", () => {
   numberRY.textContent = inputSRY.value;
   Coef_RY = inputSRY.value;
@@ -56,7 +64,6 @@ inputSRY.addEventListener("input", () => {
 /*Slider Yellow X Blue*/
 inputSYB = document.querySelector(".slider_yellowXblue");
 numberYB = document.querySelector(".displayYB");
-Coef_YB = 0;
 inputSYB.addEventListener("input", () => {
   numberYB.textContent = inputSYB.value;
   Coef_YB = inputSYB.value;
@@ -65,7 +72,6 @@ inputSYB.addEventListener("input", () => {
 /*Slider Blue X Blue*/
 inputSBB = document.querySelector(".slider_blueXblue");
 numberBB = document.querySelector(".displayBB");
-Coef_BB = 0;
 inputSBB.addEventListener("input", () => {
   numberBB.textContent = inputSBB.value;
   Coef_BB = inputSBB.value;
@@ -74,7 +80,6 @@ inputSBB.addEventListener("input", () => {
 /*Slider Red X Red*/
 inputSRR = document.querySelector(".slider_redXred");
 numberRR = document.querySelector(".displayRR");
-Coef_RR = 0;
 inputSRR.addEventListener("input", () => {
   numberRR.textContent = inputSRR.value;
   Coef_RR = inputSRR.value;
@@ -83,10 +88,41 @@ inputSRR.addEventListener("input", () => {
 /*Slider Yellow X Yellow*/
 inputSYY = document.querySelector(".slider_yellowXyellow");
 numberYY = document.querySelector(".displayYY");
-Coef_YY = 0;
 inputSYY.addEventListener("input", () => {
   numberYY.textContent = inputSYY.value;
   Coef_YY = inputSYY.value;
+});
+
+/*Slider White X White*/
+inputSWW = document.querySelector(".slider_whiteXwhite");
+numberWW = document.querySelector(".displayWW");
+inputSWW.addEventListener("input", () => {
+  numberWW.textContent = inputSWW.value;
+  Coef_WW = inputSWW.value;
+});
+
+/*Slider White X Yellow*/
+inputSWY = document.querySelector(".slider_whiteXyellow");
+numberWY = document.querySelector(".displayWY");
+inputSWY.addEventListener("input", () => {
+  numberWY.textContent = inputSWY.value;
+  Coef_WY = inputSWY.value;
+});
+
+/*Slider White X Blue*/
+inputSWB = document.querySelector(".slider_whiteXblue");
+numberWB = document.querySelector(".displayWB");
+inputSWB.addEventListener("input", () => {
+  numberWB.textContent = inputSWB.value;
+  Coef_WB = inputSWB.value;
+});
+
+/*Slider White X Red*/
+inputSWR = document.querySelector(".slider_whiteXred");
+numberWR = document.querySelector(".displayWR");
+inputSWR.addEventListener("input", () => {
+  numberWR.textContent = inputSWR.value;
+  Coef_WR = inputSWR.value;
 });
 
 draw = (x, y, c, s) => {
@@ -103,6 +139,7 @@ random = () => {
   return Math.random() * 900 + 50;
 };
 
+/*Creer un groupe de cellules*/
 create = (number, color) => {
   group = [];
   for (let i = 0; i < number; i++) {
@@ -112,6 +149,7 @@ create = (number, color) => {
   return group;
 };
 
+/*Regles entre les cellules*/
 rule = (particles1, particles2, g) => {
   for (let i = 0; i < particles1.length; i++) {
     fx = 0;
@@ -140,6 +178,8 @@ rule = (particles1, particles2, g) => {
     }
   }
 };
+
+/*Creation des cellules */
 blue = create(100, "blue");
 yellow = create(100, "yellow");
 red = create(100, "red");
@@ -147,16 +187,16 @@ white = create(100, "white");
 
 update = () => {
   rule(blue, blue, Coef_BB);
-
   rule(red, red, Coef_RR);
-
   rule(yellow, yellow, Coef_YY);
-
   rule(blue, red, Coef_BR);
-
   rule(red, yellow, Coef_RY);
-
   rule(yellow, blue, Coef_YB);
+
+  rule(white, white, Coef_WW);
+  rule(white, red, Coef_WR);
+  rule(white, blue, Coef_WB);
+  rule(white, yellow, Coef_WY);
 
   m.clearRect(0, 0, 1000, 1000);
   draw(0, 0, "black", 1000);
